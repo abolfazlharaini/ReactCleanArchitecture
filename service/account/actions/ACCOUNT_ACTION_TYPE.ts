@@ -1,0 +1,2 @@
+﻿const ACCOUNT_ACTION_TYPE = 'ACCOUNT_SERVICE';
+export default ACCOUNT_ACTION_TYPE;
