@@ -1,0 +1,50 @@
+﻿/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@import "tailwindcss/base";
+@layer base {
+  html,
+  body {
+    color: theme("textColor.gray.950");
+    font-weight: 500;
+    line-height: 1.5;
+    min-height: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: theme("textColor.gray.900");
+    -webkit-box-shadow: 0 0 0 1000px theme("backgroundColor.white") inset !important;
+    transition: theme("backgroundColor.white") 300ms ease-in-out 0s;
+  }
+}
+
+/**
+  * This injects Tailwind's component classes and any component classes
+  * registered by plugins.
+  */
+@import "tailwindcss/components";
+
+/**
+  * This injects Tailwind's utility classes and any utility classes registered
+  * by plugins.
+  */
+@import "tailwindcss/utilities";
+
+/**
+  * Use this directive to control where Tailwind injects the hover, focus,
+  * responsive, dark mode, and other variants of each class.
+  *
+  * If omitted, Tailwind will append these classes to the very end of
+  * your stylesheet by default.
+  */
+@import "tailwindcss/variants";

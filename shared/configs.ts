@@ -6,4 +6,5 @@ export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 export const DEVELOPMENT = !isProduction;
 export const IS_BROWSER = isWindowDefined;
 export const IS_SERVER = !isWindowDefined;
+export const ICON_DEFAULT_SIZE = 24;
 export const PRODUCTION = isProduction;

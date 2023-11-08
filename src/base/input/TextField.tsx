@@ -24,6 +24,7 @@ const TextField = forwardRef<any, TextFieldProps>(({
     inputProps,
     labelProps,
 }, ref: any) => {
+
     const [_, meta] = useField(inputProps.name || '');
     return (
         <div className={getClassNames([style["root"], meta.error ? style['error'] : undefined, className])}>
@@ -34,13 +35,13 @@ const TextField = forwardRef<any, TextFieldProps>(({
                         `${style['input']} peer focus:border-2 focus:border-gray-900`,
                         inputProps.className
                     ]),
+                    onInput: (e) => { console.log('a'); },
                     placeholder: ' ',
                 }}
                 ref={ref} />
-
             <label
                 className={getClassNames([
-                    `${style['label']} peer-placeholder-shown:text-sm peer-placeholder-shown:translate-y-0 peer-placeholder-shown:z-[1]  peer-focus:ps-[1.063rem] peer-focus:text-xs peer-focus:-translate-y-3`,
+                    `${style['label']} peer-placeholder-shown:text-lg peer-placeholder-shown:translate-y-0 peer-placeholder-shown:z-[1]  peer-focus:ps-[1.063rem] peer-focus:text-xs peer-focus:-translate-y-3`,
                     labelProps.className,
                 ])}>
                 {meta.error || labelProps.text}
