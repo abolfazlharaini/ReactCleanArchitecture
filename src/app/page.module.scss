@@ -1,0 +1,8 @@
+﻿@media (min-width: 1400px) {
+    .root {
+        @apply flex items-center justify-center;
+    }
+    .container {
+        @apply max-h-[62.5rem] rounded-3xl shadow-2xl w-[87.5rem];
+    }
+}

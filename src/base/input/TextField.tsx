@@ -41,7 +41,7 @@ const TextField = forwardRef<any, TextFieldProps>(({
                 ref={ref} />
             <label
                 className={getClassNames([
-                    `${style['label']} peer-placeholder-shown:text-lg peer-placeholder-shown:translate-y-0 peer-placeholder-shown:z-[1]  peer-focus:ps-[1.063rem] peer-focus:text-xs peer-focus:-translate-y-3`,
+                    `${style['label']} peer-placeholder-shown:text-lg peer-placeholder-shown:-translate-y-0.5 peer-placeholder-shown:z-[1]  peer-focus:ps-[1.063rem] peer-focus:text-xs peer-focus:-translate-y-2`,
                     labelProps.className,
                 ])}>
                 {meta.error || labelProps.text}

@@ -47,31 +47,33 @@ const LoginForm: React.FC = () => {
                         }}
                         labelProps={{ text: 'Password' }} />
 
-                    <TouchRippleAnimLazy>
-                        {({ TouchRippleEl, onRippleStart, onRippleStop }) => (
-                            <button
-                                aria-label='login'
-                                className=''
-                                disabled={loginActionStatus == 'loading'}
-                                onMouseDown={onRippleStart}
-                                onMouseUp={onRippleStop}
-                                onMouseLeave={onRippleStop}
-                                type='submit'>
+                    <div className="flex justify-end mt-[30px]">
+                        <TouchRippleAnimLazy>
+                            {({ TouchRippleEl, onRippleStart, onRippleStop }) => (
+                                <button
+                                    aria-label='login'
+                                    className='bg-[#367CFE] flex items-center justify-center h-16 relative rounded-full w-16'
+                                    disabled={loginActionStatus == 'loading'}
+                                    onMouseDown={onRippleStart}
+                                    onMouseUp={onRippleStop}
+                                    onMouseLeave={onRippleStop}
+                                    type='submit'>
 
-                                {loginActionStatus == 'loading' ? (
-                                    <SpinnerLoading
-                                        className='loading'
-                                        ignoreColor
-                                        size={24} />
-                                ) : (
-                                    <LongArrowRightIcon />
-                                )}
+                                    {loginActionStatus == 'loading' ? (
+                                        <SpinnerLoading
+                                            className='loading'
+                                            ignoreColor
+                                            size={24} />
+                                    ) : (
+                                        <LongArrowRightIcon />
+                                    )}
 
-                                {TouchRippleEl}
+                                    {TouchRippleEl}
 
-                            </button>
-                        )}
-                    </TouchRippleAnimLazy>
+                                </button>
+                            )}
+                        </TouchRippleAnimLazy>
+                    </div>
                 </Form>
             )}
         </Formik>
