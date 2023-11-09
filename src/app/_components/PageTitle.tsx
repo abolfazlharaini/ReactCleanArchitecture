@@ -1,8 +1,8 @@
 ﻿import { memo } from "react";
 
 const PageTitle: React.FC = () => (
-    <div className="absolute flex items-center h-full left-[5.5rem] top-0  z-[2]">
-        <h1 className="font-bold text-[6.5rem]">
+    <div className="flex items-center h-full mb-8 z-[2] select-none  lg:absolute lg:left-[5.5rem] lg:mb-0 lg:top-0">
+        <h1 className="font-bold text-6xl  lg:text-[6.5rem]">
             React
             <br />
             Clean

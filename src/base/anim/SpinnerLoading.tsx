@@ -19,20 +19,19 @@ type LoadingProps = IHtmlTagClassNameProps & {
     size?: number
 }
 
-const SPINEER_COLOR = {
+const SPINNER_COLOR = {
     "white": '!text-white',
 }
 export const SpinnerLoading: React.FC<LoadingProps> = memo(({
     className,
     color = 'white',
-    ignoreColor,
     size
 }) => (
     <CircularProgressLazy
         size={size}
         classes={{
             root: getClassNames([
-                ignoreColor ? undefined : SPINEER_COLOR[color],
+                SPINNER_COLOR[color],
                 className
             ])
         }}

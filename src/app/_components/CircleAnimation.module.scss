@@ -1,0 +1,17 @@
+﻿.root {
+    @apply bg-[#367CFED9];
+
+    animation: anim 10s infinite;
+}
+
+@keyframes anim {
+    0% {
+        @apply bg-[#367CFED9] rounded-[15rem];
+    }
+    50% {
+        @apply bg-[#367cfe7e] rounded-[13.5rem];
+    }
+    100% {
+        @apply bg-[#367CFED9] rounded-[15rem];
+    }
+}

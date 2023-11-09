@@ -26,6 +26,12 @@
     -webkit-box-shadow: 0 0 0 1000px theme("backgroundColor.white") inset !important;
     transition: theme("backgroundColor.white") 300ms ease-in-out 0s;
   }
+
+  @media (min-width: 1024px) and (max-width: 1260px) {
+    html {
+      font-size: 13px;
+    }
+  }
 }
 
 /**

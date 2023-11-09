@@ -35,7 +35,6 @@ const TextField = forwardRef<any, TextFieldProps>(({
                         `${style['input']} peer focus:border-2 focus:border-gray-900`,
                         inputProps.className
                     ]),
-                    onInput: (e) => { console.log('a'); },
                     placeholder: ' ',
                 }}
                 ref={ref} />

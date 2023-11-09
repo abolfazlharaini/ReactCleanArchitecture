@@ -18,10 +18,9 @@ export default function Home() {
 
   return (
     <main className={`${style['root']} bg-[#e5e5e5] min-h-[100vh]`}>
-      <article className={`${style['container']} bg-white flex justify-end overflow-hidden pr-24 py-20 relative w-screen`}>
+      <article className={`${style['container']} bg-white flex flex-col items-center overflow-hidden p-5 relative  lg:flex-row lg:justify-end lg:items-start lg:pr-24 lg:py-20`}>
         <CircleAnimation />
         <PageTitle />
-
         <LoginCard />
 
         {/* <p>Api: https://jsonplaceholder.typicode.com/users</p>

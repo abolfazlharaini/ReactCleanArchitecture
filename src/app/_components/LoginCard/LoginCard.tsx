@@ -1,20 +1,50 @@
 ﻿"use client"
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 
 import LoginForm from "./LoginForm";
+import isUserLoggedInSelect from "service/account/selectors/isUserLoggedIn.select";
+import useAppSelector from "shared/redux/hooks/useAppSelector";
+import LoginCardShapes from "./LoginCardShapes";
+import WelcomeText from "./WelcomeText";
 
 import style from './LoginCard.module.scss';
 
 const LoginCard: React.FC = () => {
+
+    const formRef = useRef<HTMLDivElement>(null);
+    const welcomeRef = useRef<HTMLDivElement>(null);
+
+    const loggedIn = useAppSelector(isUserLoggedInSelect);
+
+    useEffect(() => {
+        window.setTimeout(() => formRef.current?.classList.add('!opacity-100'), 700);
+    }, []);
+
+    useEffect(() => {
+        if (loggedIn) {
+            window.setTimeout(() => formRef.current?.classList.remove('!opacity-100'));
+            window.setTimeout(() => {
+                welcomeRef.current?.classList.add('!opacity-100');
+                welcomeRef.current?.classList.add('z-[1]');
+            }, 300);
+        }
+    }, [loggedIn]);
+
     return (
         <div className={`${style['card']} bg-[#D7E5FF] h-[50.75rem] my-auto overflow-hidden rounded-[2.5rem] relative w-[23.438rem] z-[4]`}>
-            <i className="absolute bg-[#9BBEFD] h-[24.875rem] left-[15rem] rounded-full -top-4 w-[24.875rem]" />
-            <i className="absolute bg-[#367CFE] h-[43.75rem] -left-[10.125rem] opacity-80 rounded-full -top-[26rem] w-[43.75rem]" />
-            <i className="absolute bg-[#9BBEFD] h-[24.875rem] -left-[10rem] rounded-full -top-[20rem] w-[24.875rem]" />
 
-            <div className="px-9 pt-32 relative z-[1]">
-                <h2 className="font-bold mb-56 text-white text-5xl">Login</h2>
+            <LoginCardShapes />
+
+            <div
+                className="absolute duration-700 left-0 opacity-0 px-9 pt-32 top-0 w-full z-[1]  transition-all"
+                ref={formRef}>
+                <h2 className="font-bold mb-56 select-none text-white text-5xl">Login</h2>
                 <LoginForm />
+            </div>
+            <div
+                className="absolute duration-700 flex items-center justify-center left-0 h-full opacity-0 transition-all top-0 w-full"
+                ref={welcomeRef}>
+                <WelcomeText />
             </div>
 
         </div>

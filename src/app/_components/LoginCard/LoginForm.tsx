@@ -1,4 +1,5 @@
 ﻿"use client"
+import { memo } from "react";
 import { Formik, Form } from "formik";
 
 import TextField from "@/base/input/TextField";
@@ -12,7 +13,6 @@ const LoginForm: React.FC = () => {
     const {
         onLogin,
 
-        loggedIn,
         loginActionStatus,
     } = useLoginForm();
 
@@ -47,12 +47,12 @@ const LoginForm: React.FC = () => {
                         }}
                         labelProps={{ text: 'Password' }} />
 
-                    <div className="flex justify-end mt-[30px]">
+                    <div className="flex justify-end mt-[1.875rem]">
                         <TouchRippleAnimLazy>
                             {({ TouchRippleEl, onRippleStart, onRippleStop }) => (
                                 <button
                                     aria-label='login'
-                                    className='bg-[#367CFE] flex items-center justify-center h-16 relative rounded-full w-16'
+                                    className='bg-[#367CFE] flex items-center justify-center h-16 relative rounded-full text-white transition-all w-16'
                                     disabled={loginActionStatus == 'loading'}
                                     onMouseDown={onRippleStart}
                                     onMouseUp={onRippleStop}
@@ -62,8 +62,7 @@ const LoginForm: React.FC = () => {
                                     {loginActionStatus == 'loading' ? (
                                         <SpinnerLoading
                                             className='loading'
-                                            ignoreColor
-                                            size={24} />
+                                            size={20} />
                                     ) : (
                                         <LongArrowRightIcon />
                                     )}
@@ -79,4 +78,4 @@ const LoginForm: React.FC = () => {
         </Formik>
     );
 }
-export default LoginForm;
+export default memo(LoginForm);

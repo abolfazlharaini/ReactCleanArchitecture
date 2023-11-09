@@ -9,11 +9,7 @@ export default async function loginService(request: {
 }) {
     const response = await apiServiceAsync<{ email: string; }[]>({
         url: ACCOUNT_CONTROLLER,
-        method: 'get',
-        data: {
-            email: request.email,
-            password: request.password,
-        },
+        method: 'get'
     });
     if (!response.ok || !response.data)
         return EMPTY_RESULT;
