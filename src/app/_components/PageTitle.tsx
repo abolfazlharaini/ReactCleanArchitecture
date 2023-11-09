@@ -2,7 +2,7 @@
 
 const PageTitle: React.FC = () => (
     <div className="flex items-center h-full mb-8 z-[2] select-none  lg:absolute lg:left-[5.5rem] lg:mb-0 lg:top-0">
-        <h1 className="font-bold text-6xl  lg:text-[6.5rem]">
+        <h1 className="font-bold text-6xl  lg:leading-[9rem] lg:text-[6.5rem]">
             React
             <br />
             Clean
