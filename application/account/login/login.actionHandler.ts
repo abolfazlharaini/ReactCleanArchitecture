@@ -20,6 +20,7 @@ export default function loginActionHandler(listener: typeof middlewareListener) 
                 });
                 if (response) {
                     dispatch(loggedInSharedAction(response));
+                    setApplicationActionStatus(action, 'succeed');
                     return;
                 }
 

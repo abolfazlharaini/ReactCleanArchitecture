@@ -6,6 +6,8 @@ import getClassNames from "@/base/getClassNames";
 
 const WelcomeText: React.FC = () => {
     const {
+        onLogout,
+
         showContent,
         showEmail,
         userInfo,
@@ -21,9 +23,11 @@ const WelcomeText: React.FC = () => {
             showEmail ? '!bottom-0' : undefined
         ])}>
             <p className="px-8 py-7 select-none">{userInfo.email}</p>
-            {/* <button>
+            <button
+                className='bg-slate-50 border-t-2 relative py-7 text-red-500 w-full'
+                onClick={onLogout}>
                 Logout
-            </button> */}
+            </button>
         </div>
     </>);
 }

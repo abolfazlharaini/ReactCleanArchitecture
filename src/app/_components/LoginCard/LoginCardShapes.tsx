@@ -15,10 +15,12 @@ const LoginCardShapes: React.FC = () => {
     const loggedIn = useAppSelector(isUserLoggedInSelect);
 
     useEffect(() => {
-        window.setTimeout(() => shape1Ref.current?.classList.add(style['shape-1--init']), 500);
-        window.setTimeout(() => shape2Ref.current?.classList.add(style['shape-2--init']), 100);
-        window.setTimeout(() => shape3Ref.current?.classList.add(style['shape-3--init']), 700);
-    }, []);
+        if (!loggedIn) {
+            window.setTimeout(() => shape1Ref.current?.classList.add(style['shape-1--init']), 500);
+            window.setTimeout(() => shape2Ref.current?.classList.add(style['shape-2--init']), 100);
+            window.setTimeout(() => shape3Ref.current?.classList.add(style['shape-3--init']), 700);
+        }
+    }, [loggedIn]);
 
     return (<>
         <i

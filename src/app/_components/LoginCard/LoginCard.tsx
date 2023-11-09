@@ -27,6 +27,12 @@ const LoginCard: React.FC = () => {
                 welcomeRef.current?.classList.add('!opacity-100');
                 welcomeRef.current?.classList.add('z-[1]');
             }, 300);
+        } else {
+            window.setTimeout(() => {
+                welcomeRef.current?.classList.remove('!opacity-100');
+                welcomeRef.current?.classList.remove('z-[1]');
+            });
+            window.setTimeout(() => formRef.current?.classList.add('!opacity-100'), 300);
         }
     }, [loggedIn]);
 
